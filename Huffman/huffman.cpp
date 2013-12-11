@@ -172,15 +172,15 @@ namespace huffman
 			}
 			if (lhs_)
 			{
-				auto lbits = bits;
-				lbits.push_back('1');
-				lhs_->internal_pretty(out, lbits);
+				bits.push_back('1');
+				lhs_->internal_pretty(out, bits);
+				bits.pop_back();
 			}
 			if (rhs_)
 			{
-				auto rbits = bits;
-				rbits.push_back('0');
-				rhs_->internal_pretty(out, rbits);
+				bits.push_back('0');
+				rhs_->internal_pretty(out, bits);
+				bits.pop_back();
 			}
 		}
 
